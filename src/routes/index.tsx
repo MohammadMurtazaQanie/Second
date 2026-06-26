@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import confetti from "canvas-confetti";
-import { Volume2, VolumeX } from "lucide-react";
 import { StarFrame } from "@/components/birthday/StarFrame";
 import { FloatingHearts } from "@/components/birthday/FloatingHearts";
 
@@ -19,8 +18,7 @@ import biteNew from "@/assets/bite-new.gif";
 import hugNew from "@/assets/hug-new.gif";
 import duduWave from "@/assets/dudu.gif";
 
-// 👉 paste your video link here (YouTube, Drive, anything)
-const EXTRA_VIDEO_URL = "https://youtu.be/your-video-id";
+const EXTRA_VIDEO_URL = "https://mohammadmurtazaqanie.github.io/SadiaBirthday/";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,7 +60,6 @@ function BirthdayApp() {
   const [screen, setScreen] = useState<Screen>("lock");
   const [code, setCode] = useState("");
   const [noPos, setNoPos] = useState({ x: 0, y: 0 });
-  const [muted, setMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleDigit = (d: string) => {
@@ -80,19 +77,6 @@ function BirthdayApp() {
     }
   };
 
-  const toggleMute = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (audio.paused) {
-      audio.muted = false;
-      audio.play().catch(() => {});
-      setMuted(false);
-    } else {
-      audio.muted = !audio.muted;
-      setMuted(audio.muted);
-    }
-  };
-
   // Auto-show unlock once 4 digits typed, attempt
   useEffect(() => {
     if (code.length === 4) {
@@ -104,13 +88,6 @@ function BirthdayApp() {
   return (
     <div className="relative min-h-screen flex items-center justify-center p-4">
       <audio ref={audioRef} src={bgm} loop />
-      <button
-        onClick={toggleMute}
-        aria-label={muted ? "Unmute music" : "Mute music"}
-        className="fixed top-4 right-4 z-50 w-11 h-11 rounded-full bg-white/90 border-2 border-pink-strong text-pink-deep shadow-lg flex items-center justify-center hover:scale-105 transition"
-      >
-        {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-      </button>
       <FloatingHearts />
       <div className="relative z-10 w-full max-w-3xl">
         <AnimatePresence mode="wait">
