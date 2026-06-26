@@ -85,6 +85,16 @@ function BirthdayApp() {
     }
   }, [code]);
 
+  // Browsers block audio-with-sound until the page has been interacted with at
+  // least once, so kick off playback on the very first tap/click anywhere.
+  useEffect(() => {
+    const startMusic = () => {
+      audioRef.current?.play().catch(() => {});
+    };
+    document.addEventListener("pointerdown", startMusic, { once: true });
+    return () => document.removeEventListener("pointerdown", startMusic);
+  }, []);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center p-4">
       <audio ref={audioRef} src={bgm} loop />
