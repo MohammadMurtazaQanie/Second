@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"vite dev\")",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:8080)",
+      "Bash(cp *)",
+      "Bash(env)",
+      "Bash(find ~/Downloads ~/Desktop ~/Pictures -maxdepth 3 \\\\\\( -iname \"sadia*.jpg\" -o -iname \"couple*.jpg\" -o -iname \"couple*.png\" -o -iname \"eye.jpg\" -o -iname \"bite-new.gif\" -o -iname \"hug-new.gif\" -o -iname \"dudu*.gif\" -o -iname \"bubu*.gif\" \\\\\\) 2>/dev/null)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:8080/)",
+      "Bash(lsof -nP -iTCP -sTCP:LISTEN)",
+      "Bash(cp \"/Users/murtaza/Desktop/Images/62174ee9-b341-4e11-9880-fde561eeb913.JPG\" sadia1.jpg)",
+      "Bash(cp \"/Users/murtaza/Desktop/Images/54a9d2c0-59b6-4531-88df-3c53ce5ae858.JPG\" sadia2.jpg)",
+      "Bash(cp \"/Users/murtaza/Desktop/Images/d9dc29a0-a38b-47eb-9a35-682debe3d7c8.JPG\" sadia3.jpg)",
+      "Bash(cp \"/Users/murtaza/Desktop/Images/c70d9425-7b65-4a81-b080-a6dbc7fc835e.JPG\" sadia4.jpg)",
+      "Bash(cp \"/Users/murtaza/Desktop/Images/e0ab7f97-02e2-454a-aa94-d4f9918e4a91.JPG\" sadia5.jpg)",
+      "Bash(curl -s -o /tmp/page.html -w \"HTTP %{http_code}\\\\n\" http://localhost:8080/)",
+      "Bash(curl -s \"http://localhost:8080/src/routes/index.tsx\")",
+      "Bash(curl -s \"http://localhost:8080/src/routes/index.tsx?tsr-split=component\")",
+      "Bash(curl -s -D - -o /tmp/sadia1_served.jpg \"http://localhost:8080/src/assets/sadia1.jpg\")",
+      "Bash(npx eslint *)",
+      "Bash(find ~/Desktop ~/Downloads -maxdepth 3 \\\\\\( -iname \"*.mp3\" -o -iname \"*.wav\" -o -iname \"*.m4a\" -o -iname \"*.ogg\" \\\\\\) 2>/dev/null)",
+      "Bash(ls -la '/Users/murtaza/Downloads/Arctic Monkeys - I Wanna Be Yours Instrumental \\(Best part looped\\) [eCydFq5F0Tg].mp3')",
+      "Bash(file '/Users/murtaza/Downloads/Arctic Monkeys - I Wanna Be Yours Instrumental \\(Best part looped\\) [eCydFq5F0Tg].mp3')",
+      "Bash(cp \"/Users/murtaza/Downloads/Arctic Monkeys - I Wanna Be Yours Instrumental \\(Best part looped\\) [eCydFq5F0Tg].mp3\" \"/Users/murtaza/Downloads/sadia-birthday/src/assets/birthday-bgm.mp3\" && ls -la \"/Users/murtaza/Downloads/sadia-birthday/src/assets/birthday-bgm.mp3\")",
+      "Bash(curl -s -D - -o /tmp/bgm_check.mp3 \"http://localhost:8080/src/assets/birthday-bgm.mp3\")"
+    ]
+  }
+}
